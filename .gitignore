@@ -1,0 +1,23 @@
+# Terraform files
+*.tfstate
+*.tfstate.backup
+*.tfplan
+.terraform/
+
+# Local .terraform directories
+**/.terraform/*
+
+# .tfvars files that are intended to be shared
+*.auto.tfvars
+
+# Crash log files
+crash.log
+
+# Exclude any private key files used for SSH authentication
+*.pem
+
+# Exclude any temporary files or directories
+*.tfvars.json
+*.tfvars.tf
+*.terraform.lock.hcl
+
