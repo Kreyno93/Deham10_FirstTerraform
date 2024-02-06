@@ -7,16 +7,84 @@ resource "aws_instance" "Deham10" {
     ami = "ami-0d442a425e2e0a743"
     instance_type = "t2.micro"
     key_name = "vockey"
-    vpc_security_group_ids = ["sg-0b4be3dadc8bc38f1"]
+    vpc_security_group_ids = ["sg-082f0c9c7044cb271"]
     user_data = <<-EOF
                 #!/bin/bash
                 sudo yum update -y
                 sudo yum install -y httpd
                 sudo systemctl start httpd
                 sudo systemctl enable httpd
-                sudo echo "Hello World from $(hostname -f)" > /var/www/html/index.html
+                sudo echo "<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic Design</title>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            background-color: #1f1f1f;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome to the Future</h1>
+        <p>This is a futuristic HTML template. Feel free to customize it according to your needs.</p>
+        <button>Get Started</button>
+    </div>
+
+</body>
+</html>
+" > /var/www/html/index.html
                 EOF
     tags = {
         Name = "Deham10"
     }
+}
+
+output "Instance_Id" {
+    description = "The ID of the instance"
+    value = aws_instance.Deham10.id
 }
