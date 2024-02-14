@@ -36,7 +36,7 @@ resource "aws_instance" "Deham10" {
     ami                    = "ami-0d442a425e2e0a743"
     instance_type          = "t2.micro"
     key_name               = "vockey"
-    vpc_security_group_ids = ["sg-0574ce035c67863c1"]
+    vpc_security_group_ids = [aws_security_group.Deham10.id]
     user_data              = <<-EOF
                                 #!/bin/bash
                                 sudo yum update -y
