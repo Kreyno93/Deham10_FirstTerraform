@@ -16,7 +16,7 @@ provider "aws" {
 resource "aws_security_group" "Deham10" {
     name        = "Deham10"
     description = "Allow inbound traffic"
-    vpc_id      = "vpc-072b249341fa09676"
+    vpc_id      = "vpc-08b164f3da829677f"
 
     ingress {
         description = "HTTP"
@@ -38,7 +38,7 @@ resource "aws_instance" "Deham10" {
     ami                    = "ami-0d442a425e2e0a743"
     instance_type          = "t2.micro"
     key_name               = "vockey"
-    vpc_security_group_ids = ["sg-0d50b2a0ef6428fc1"]
+    vpc_security_group_ids = ["sg-0574ce035c67863c1"]
     user_data              = <<-EOF
                                 #!/bin/bash
                                 sudo yum update -y
