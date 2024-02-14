@@ -20,3 +20,8 @@ crash.log
 *.tfvars.json
 *.tfvars.t.terraform.lock.hcl
 
+# Exclude Plan output
+*.plan
+*.out
+/Plan.out
+
