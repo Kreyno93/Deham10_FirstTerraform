@@ -18,6 +18,10 @@ crash.log
 
 # Exclude any temporary files or directories
 *.tfvars.json
-*.tfvars.tf
-*.terraform.lock.hcl
+*.tfvars.t.terraform.lock.hcl
+
+# Exclude Plan output
+*.plan
+*.out
+/Plan.out
 
