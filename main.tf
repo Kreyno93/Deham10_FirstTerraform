@@ -1,3 +1,12 @@
+terraform {
+    required_providers {
+        aws = {
+        source  = "hashicorp/aws"
+        version = "5.36.0"
+        }
+    }
+    
+}
 provider "aws" {
     region = "us-west-2"
 
@@ -121,9 +130,6 @@ resource "aws_instance" "Deham10" {
                                 EOF
     tags = {
         Name = "Deham10"
-    }
-        provisioner "local-exec" {
-        command = "bash update_security_group_ids.sh"
     }
 }
 
