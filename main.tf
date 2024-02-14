@@ -5,7 +5,6 @@ terraform {
         version = "~> 5.35.0"
         }
     }
-    
 }
 
 resource "aws_eip" "Deham10" {

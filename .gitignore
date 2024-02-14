@@ -25,3 +25,9 @@ crash.log
 *.out
 /Plan.out
 
+# Exclude .DS_Store
+.DS_Store
+
+# Exclude .png files
+*.png
+
