@@ -10,6 +10,6 @@ resource "aws_instance" "Deham10" {
   subnet_id              = aws_subnet.public_subnet.id
   user_data              = file("userdata.sh")
   tags = {
-      Name = "Deham10"
+    Name = "Deham10"
   }
 }

@@ -37,8 +37,6 @@ cp -rvf wordpress/* .
 rm -R wordpress 
 rm latest.tar.gz
 
-# Configure Wordpress
-
 # Making changes to the wp-config.php file, setting the DB name
 cp ./wp-config-sample.php ./wp-config.php # rename the file from sample to clean
 sed -i "s/'database_name_here'/'$DBName'/g" wp-config.php 
