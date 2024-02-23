@@ -3,11 +3,6 @@
 
 # Update the package repository
 sudo yum update -y
-sudo yum install gcc-c++ zlib-devel
-sudo yum install -y amazon-linux-extras
-sudo amazon-linux-extras enable php8.2
-sudo yum clean metadata
-sudo yum install php php-devel
 
 # Install Apache web server
 sudo yum install httpd -y
