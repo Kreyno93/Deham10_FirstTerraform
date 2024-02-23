@@ -4,6 +4,13 @@
 # Update the package repository
 sudo yum update -y
 
+# Update php version to 8.2
+sudo yum install -y amazon-linux-extras
+sudo yum update -y
+sudo amazon-linux-extras enable php8.2
+sudo yum clean metadata
+sudo yum install php-cli php-pdo php-fpm php-json php-mysqlnd php-gd
+
 # Install Apache web server
 sudo yum install httpd -y
 
